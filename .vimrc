@@ -1,4 +1,33 @@
 " ------------------------------
+" Bundle Settings
+" ------------------------------
+set nocompatible " viとの互換性OFF
+filetype off     " ファイル形式の検出を無効にする
+
+" Vundleを初期化
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+" from github repos
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'gmarik/vundle'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'vim-scripts/Railscasts-Theme-GUIand256color'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/surround.vim'
+
+" from vim-scripts repos
+Bundle 'git-commit'
+
+" from non github repos
+
+
+" ------------------------------
 " General Settings
 " ------------------------------
 filetype plugin on            " ファイルタイププラグインを有効にする
@@ -22,6 +51,7 @@ set ruler              " ルーラーを表示
 set title              " タイトルを表示
 set t_Co=256           " 色数指定(256)
 syntax on              " 強調表示ON
+colorscheme railscasts " カラースキーマを設定
 set ambiwidth=double   " ☆などの記号を正しく表示する
 set cmdheight=1        " コマンドラインに使われるスクリーン上の行数
 set showcmd            " コマンドをステータスライン(右側)に表示
@@ -50,6 +80,26 @@ set termencoding=utf-8 " 端末の出力に使用されるエンコーディン�
 set encoding=utf-8     " Vim内部で使用するエンコーディング(グローバル)
 set fileencoding=utf-8 " ファイルのエンコーディング(バッファローカル)
 set fileencodings=iso-2022-jp,euc-jp,cp932,utf-8 " Vimが表示できるエンコーディングリスト(グローバル)
+
+
+" ------------------------------
+" neocomplcache Settings
+" ------------------------------
+let g:neocomplcache_enable_at_startup = 1            " 起動時に有効にする
+let g:neocomplcache_enable_smart_case = 1            " smartcaseを有効にする
+let g:neocomplcache_enable_camel_case_completion = 1 " camel caseを有効にする
+let g:neocomplcache_enable_underbar_completion = 1   " _区切りの補完を有効にする
+let g:neocomplcache_min_syntax_length = 3            " シンタックスをキャッシュするときの最小文字長を3に設定する
+
+" <C-K> にマッピング
+" imap <C-K> <Plug>(neocomplcache_snippets_expand)
+" smap <C-K> <Plug>(neocomplcache_snippets_expand)
+
+" Tabキーでオムニ補完できるようにする
+" 順方向に移動
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" 逆方向に移動
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 
 " ------------------------------
