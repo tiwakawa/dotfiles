@@ -15,10 +15,10 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'vim-scripts/Railscasts-Theme-GUIand256color'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Railscasts-Theme-GUIand256color'
 Bundle 'vim-scripts/surround.vim'
 
 " from vim-scripts repos
