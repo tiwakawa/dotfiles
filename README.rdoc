@@ -1,0 +1,14 @@
+== my dotfiles
+
+=== make command
+  make
+  .zshrc, .vimrc, .vimのシンボリックリンクを作成
+
+  make zsh
+  .zshrcのシンボリックリンクを作成
+
+  make vim
+  .vimrc, .vimのシンボリックリンクを作成
+
+  make clean
+  .zshrc, .vimrc, .vimのシンボリックリンクを削除
