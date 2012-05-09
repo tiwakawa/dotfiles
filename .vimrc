@@ -62,6 +62,8 @@ set laststatus=2       " ステータスラインを表示(常にステータス
 " 右側：[修正フラグ][読み込み専用フラグ][ファイルタイプ][プレビューウィンドウフラグ]
 "       [エンコーディング][ファイルフォーマット][カーソルの行数, カーソルの列数]
 set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
+set list               " 不可視文字(タブや行末)を表示する
+set listchars=tab:>>   " タブを可視化する
 
 
 " ------------------------------
@@ -113,6 +115,8 @@ inoremap "" ""<Left>
 inoremap '' ''<Left>
 inoremap <> <><Left>
 
+" 検索結果のハイライトをESC2回押しで消去する
+nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " ------------------------------
 " Ruby Settings

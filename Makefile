@@ -1,6 +1,8 @@
-DOT_FILES = .zshrc .vimrc .vim
+DOT_FILES = .zshrc .vimrc .vim .gemrc
 
-all: zsh vim
+all: install
+
+install: $(foreach f, $(DOT_FILES), link-dot-file-$(f))
 
 zsh: $(foreach f, $(filter .zsh%, $(DOT_FILES)), link-dot-file-$(f))
 
