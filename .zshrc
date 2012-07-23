@@ -123,6 +123,7 @@ esac
 alias r=rails
 alias v=vim
 alias gr='cd `git rev-parse --show-toplevel`'
+alias gitlog='git log-all | less -R'
 
 # cdコマンド実行後、lsを実行する
 #function cd() {
