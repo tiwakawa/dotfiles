@@ -1,0 +1,15 @@
+[user]
+  name = tiwakawa
+  email = *****
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+
+[core]
+  pager = cat
+
+[alias]
+  log-all = log --graph --date=short --all --color --pretty='%Cgreen%x09%h %cd %Cblue%cn%Creset%x09%s %Cred%d%Creset'
