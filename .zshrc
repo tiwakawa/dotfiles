@@ -122,8 +122,15 @@ esac
 ### Aliases ###
 alias r=rails
 alias v=vim
+alias gr='cd `git rev-parse --show-toplevel`'
 
 # cdコマンド実行後、lsを実行する
 #function cd() {
 #  builtin cd $@ && ls;
 #}
+
+### rbenv ###
+#eval "$(rbenv init -)"
+
+### Postgres.app ###
+#PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
