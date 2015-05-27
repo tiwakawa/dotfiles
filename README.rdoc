@@ -12,3 +12,6 @@
 
   make clean
   .zshrc, .vimrc, .vimのシンボリックリンクを削除
+
+== memo
+  git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git

@@ -131,7 +131,7 @@ alias gitlog='git log-all | less -R'
 #}
 
 ### rbenv ###
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 ### Postgres.app ###
 #PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
