@@ -92,7 +92,11 @@ fi
 # macOS defaults（任意）
 # ------------------------------
 echo ""
-read -rp "macOS のシステム設定を適用しますか？ (y/N): " apply_macos
+if [ -t 0 ]; then
+  read -rp "macOS のシステム設定を適用しますか？ (y/N): " apply_macos
+else
+  apply_macos="N"
+fi
 if [[ "$apply_macos" =~ ^[Yy]$ ]]; then
   bash "$DOTFILES_DIR/macos/defaults.sh"
 else
