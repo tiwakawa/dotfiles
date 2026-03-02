@@ -16,6 +16,28 @@ info()    { echo -e "${GREEN}[INFO]${NC} $1"; }
 warn()    { echo -e "${YELLOW}[WARN]${NC} $1"; }
 error()   { echo -e "${RED}[ERROR]${NC} $1"; }
 
+# ------------------------------
+# Homebrew のインストール
+# ------------------------------
+if ! command -v brew &>/dev/null; then
+  info "Homebrew をインストールします..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Apple Silicon の場合はパスを追加
+  if [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+else
+  info "Homebrew はインストール済みです。"
+fi
+
+# ------------------------------
+# brew bundle でパッケージをインストール
+# ------------------------------
+echo ""
+info "Brewfile からパッケージをインストールします..."
+brew bundle --file="$DOTFILES_DIR/Brewfile"
+
 # 既存ファイルをバックアップしてシンボリックリンクを作成する関数
 # usage: link <dotfiles内のパス> <リンク先のパス>
 link() {
@@ -115,4 +137,5 @@ echo "次のステップ:"
 echo "  1. ターミナルを再起動して .zshrc を反映する"
 echo "  2. 必要に応じて ~/.ssh/config にホスト設定を追加する"
 echo "  3. macOS 設定を変更したい場合: bash macos/defaults.sh"
+echo "  4. パッケージを追加する場合は Brewfile を編集して brew bundle を実行する"
 echo ""
