@@ -47,6 +47,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # 補完候補に
 eval "$(starship init zsh)"  # プロンプトをstarshipに委譲する
 
 # ------------------------------
+# SSH Agent
+# ------------------------------
+# キーチェーンからSSH鍵を自動読み込みする
+ssh-add --apple-load-keychain 2>/dev/null
+
+# ------------------------------
 # Aliases
 # ------------------------------
 alias v=vim                                          # vimを短縮
