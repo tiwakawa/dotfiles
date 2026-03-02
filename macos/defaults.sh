@@ -65,6 +65,12 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # ------------------------------
+# VSCode
+# ------------------------------
+# キーリピートを有効にする（長押しで文字選択メニューが出ないようにする）
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# ------------------------------
 # 反映のため再起動が必要なプロセスを再起動
 # ------------------------------
 for app in "Finder" "Dock"; do
