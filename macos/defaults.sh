@@ -30,9 +30,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # ------------------------------
 # Dock
 # ------------------------------
-# Dock を自動的に隠す
-defaults write com.apple.dock autohide -bool true
-
 # Dock のサイズ
 defaults write com.apple.dock tilesize -int 48
 
