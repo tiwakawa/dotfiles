@@ -1,0 +1,2 @@
+ms-vscode-remote.remote-containers
+vscodevim.vim

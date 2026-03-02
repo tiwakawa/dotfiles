@@ -1,0 +1,12 @@
+# SSH Config
+# 秘密鍵ファイル（~/.ssh/*.pem, ~/.ssh/id_*）はこのリポジトリに含めない
+
+# 共通設定
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+
+# 例: GitHub
+# Host github.com
+#   User git
+#   IdentityFile ~/.ssh/id_ed25519_github

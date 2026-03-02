@@ -1,0 +1,61 @@
+# dotfiles
+
+tiwakawa の macOS 環境設定ファイル一式。
+
+## ディレクトリ構成
+
+```
+dotfiles/
+├── setup.sh              # セットアップスクリプト（シンボリックリンク作成）
+├── git/
+│   └── .gitconfig        # Git 設定
+├── macos/
+│   └── defaults.sh       # macOS システム設定（defaults write）
+├── ssh/
+│   └── config            # SSH 設定（秘密鍵は含まない）
+├── starship/
+│   └── starship.toml     # Starship プロンプト設定
+├── vscode/
+│   ├── extensions.txt    # VSCode 拡張機能リスト
+│   ├── keybindings.json  # VSCode キーバインド
+│   └── settings.json     # VSCode 設定
+└── zsh/
+    └── .zshrc            # Zsh 設定
+```
+
+## セットアップ
+
+```bash
+git clone https://github.com/tiwakawa/dotfiles.git ~/workspace/projects/dotfiles
+cd ~/workspace/projects/dotfiles
+bash setup.sh
+```
+
+setup.sh が行うこと：
+
+1. 各設定ファイルへのシンボリックリンクを作成（既存ファイルは `.bak.YYYYMMDDHHMMSS` にバックアップ）
+2. VSCode 拡張機能を `extensions.txt` からインストール
+3. macOS システム設定の適用（任意・確認あり）
+
+## シンボリックリンク対応表
+
+| dotfiles 内パス | リンク先 |
+|---|---|
+| `zsh/.zshrc` | `~/.zshrc` |
+| `git/.gitconfig` | `~/.gitconfig` |
+| `starship/starship.toml` | `~/.config/starship.toml` |
+| `ssh/config` | `~/.ssh/config` |
+| `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
+| `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
+
+## 注意事項
+
+- `~/.ssh/` 配下の秘密鍵（`id_*`, `*.pem` 等）はこのリポジトリに含めない
+- `ssh/config` には秘密鍵のパスを記載するが、鍵ファイル自体は別途管理する
+- macOS 設定は `bash macos/defaults.sh` で単独実行も可能
+
+## VSCode 拡張機能の更新
+
+```bash
+code --list-extensions > vscode/extensions.txt
+```

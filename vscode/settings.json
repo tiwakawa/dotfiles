@@ -1,0 +1,50 @@
+{
+  // ========== Editor基本（vimrc: expandtab/tabstop/shiftwidth, list/listchars 相当） ==========
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+
+  // wrap は好み。コードでは邪魔になりやすいのでデフォルトOFF
+  "editor.wordWrap": "off",
+
+  // ========== VSCodeVim（vimrc: search系 + jj + ESC ESCでnohlsearch） ==========
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "editor.lineNumbers": "on",
+
+  // surround.vim 相当（VSCodeVim内蔵）
+  "vim.surround": true,
+
+  // Insert → Normal を楽に
+  "vim.insertModeKeyBindingsNonRecursive": [
+    { "before": ["j", "j"], "after": ["<Esc>"] }
+  ],
+
+  // 検索ハイライト解除（Gemini案の :nohl は不安定なので :nohlsearch に修正）
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<Esc>", "<Esc>"], "commands": [":nohlsearch"] },
+    // leader（Space）で最低限だけ
+    { "before": ["<leader>", "w"], "commands": ["workbench.action.files.save"] },
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.showCommands"] }
+  ],
+  "vim.leader": " ",
+
+  // 補完の暴発防止（neocomplcache時代のTab事故を避ける）
+  "editor.acceptSuggestionOnEnter": "off",
+
+  // ========== EditorConfig ==========
+  // 拡張が .editorconfig を反映するので、VS Code側のインデント自動推測は切っておく（上でdetectIndentation=false）
+
+  // ========== Ruby LSP（コンテナ側に入っていれば有効、ローカルでは無視される） ==========
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true
+  },
+
+  "workbench.startupEditor": "none"
+}

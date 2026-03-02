@@ -1,0 +1,20 @@
+# Claude Code
+.claude/
+
+# SSH 秘密鍵
+.ssh/id_*
+.ssh/*.pem
+.ssh/*.key
+!ssh/config
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# バックアップファイル（setup.sh が生成）
+*.bak.*
+
+# エディタ
+*.swp
+*.swo
+*~
