@@ -7,6 +7,7 @@ tiwakawa の macOS 環境設定ファイル一式。
 ```
 dotfiles/
 ├── setup.sh              # セットアップスクリプト（シンボリックリンク作成）
+├── Brewfile              # Homebrew パッケージ定義
 ├── git/
 │   └── .gitconfig        # Git 設定
 ├── macos/
@@ -34,8 +35,9 @@ bash setup.sh
 setup.sh が行うこと：
 
 1. 各設定ファイルへのシンボリックリンクを作成（既存ファイルは `.bak.YYYYMMDDHHMMSS` にバックアップ）
-2. VSCode 拡張機能を `extensions.txt` からインストール
-3. macOS システム設定の適用（任意・確認あり）
+2. `brew bundle` で Brewfile に定義したパッケージを一括インストール
+3. VSCode 拡張機能を `extensions.txt` からインストール
+4. macOS システム設定の適用（任意・確認あり）
 
 ## シンボリックリンク対応表
 
@@ -47,6 +49,33 @@ setup.sh が行うこと：
 | `ssh/config` | `~/.ssh/config` |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
 | `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
+
+## Brewfile
+
+[Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) を使ってパッケージを一括管理。
+
+| 種別 | パッケージ | 説明 |
+|---|---|---|
+| brew | `git` | バージョン管理 |
+| brew | `starship` | シェルプロンプト |
+| cask | `claude-code` | Claude Code CLI |
+| cask | `docker-desktop` | Docker Desktop |
+| cask | `iterm2` | ターミナル |
+| cask | `visual-studio-code` | エディタ |
+| vscode | `ms-vscode-remote.remote-containers` | Dev Containers |
+| vscode | `vscodevim.vim` | Vim キーバインド |
+
+単独で実行する場合：
+
+```bash
+brew bundle
+```
+
+Brewfile を現在の環境から生成・更新する場合：
+
+```bash
+brew bundle dump --force
+```
 
 ## 注意事項
 
