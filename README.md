@@ -56,6 +56,7 @@ setup.sh が行うこと：
 
 | 種別 | パッケージ | 説明 |
 |---|---|---|
+| brew | `gh` | GitHub CLI |
 | brew | `git` | バージョン管理 |
 | brew | `starship` | シェルプロンプト |
 | cask | `claude-code` | Claude Code CLI |
