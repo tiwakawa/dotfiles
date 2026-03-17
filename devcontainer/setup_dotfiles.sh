@@ -11,6 +11,21 @@ if [ ! -d "$DOTFILES_DIR" ]; then
   exit 1
 fi
 
+# curl がなければインストール
+if ! command -v curl &>/dev/null; then
+  echo "curl をインストールしています..."
+  if command -v apt-get &>/dev/null; then
+    apt-get update -qq && apt-get install -y -qq curl
+  elif command -v dnf &>/dev/null; then
+    dnf install -y -q curl
+  elif command -v yum &>/dev/null; then
+    yum install -y -q curl
+  else
+    echo "ERROR: パッケージマネージャーが見つかりません。curl を手動でインストールしてください。" >&2
+    exit 1
+  fi
+fi
+
 # zsh がなければインストール
 if ! command -v zsh &>/dev/null; then
   echo "zsh をインストールしています..."
