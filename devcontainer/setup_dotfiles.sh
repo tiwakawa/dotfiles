@@ -26,6 +26,21 @@ if ! command -v curl &>/dev/null; then
   fi
 fi
 
+# git がなければインストール
+if ! command -v git &>/dev/null; then
+  echo "git をインストールしています..."
+  if command -v apt-get &>/dev/null; then
+    apt-get update -qq && apt-get install -y -qq git
+  elif command -v dnf &>/dev/null; then
+    dnf install -y -q git
+  elif command -v yum &>/dev/null; then
+    yum install -y -q git
+  else
+    echo "ERROR: パッケージマネージャーが見つかりません。git を手動でインストールしてください。" >&2
+    exit 1
+  fi
+fi
+
 # zsh がなければインストール
 if ! command -v zsh &>/dev/null; then
   echo "zsh をインストールしています..."
