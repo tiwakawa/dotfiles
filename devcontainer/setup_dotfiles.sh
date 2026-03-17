@@ -11,6 +11,27 @@ if [ ! -d "$DOTFILES_DIR" ]; then
   exit 1
 fi
 
+# zsh がなければインストール
+if ! command -v zsh &>/dev/null; then
+  echo "zsh をインストールしています..."
+  if command -v apt-get &>/dev/null; then
+    apt-get update -qq && apt-get install -y -qq zsh
+  elif command -v dnf &>/dev/null; then
+    dnf install -y -q zsh
+  elif command -v yum &>/dev/null; then
+    yum install -y -q zsh
+  else
+    echo "ERROR: パッケージマネージャーが見つかりません。zsh を手動でインストールしてください。" >&2
+    exit 1
+  fi
+fi
+
+# starship がなければインストール
+if ! command -v starship &>/dev/null; then
+  echo "starship をインストールしています..."
+  curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
+fi
+
 # $HOME/.config が存在しない場合は作成
 mkdir -p "$HOME/.config"
 
