@@ -74,3 +74,18 @@ echo "dotfiles を適用しました:"
 echo "  ~/.zshrc            -> $DOTFILES_DIR/zsh/.zshrc"
 echo "  ~/.config/starship.toml -> $DOTFILES_DIR/starship/starship.toml"
 echo "  ~/.gitconfig        -> $DOTFILES_DIR/git/.gitconfig"
+
+# デフォルトシェルを zsh に変更
+ZSH_PATH="$(which zsh)"
+if [ -n "$ZSH_PATH" ]; then
+  if grep -qF "$ZSH_PATH" /etc/shells 2>/dev/null; then
+    chsh -s "$ZSH_PATH"
+    echo "デフォルトシェルを $ZSH_PATH に変更しました"
+  else
+    echo "$ZSH_PATH" >> /etc/shells
+    chsh -s "$ZSH_PATH"
+    echo "デフォルトシェルを $ZSH_PATH に変更しました"
+  fi
+else
+  echo "WARNING: zsh が見つかりません。デフォルトシェルの変更をスキップします。" >&2
+fi
