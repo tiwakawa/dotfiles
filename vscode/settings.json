@@ -47,5 +47,6 @@
   },
 
   "workbench.startupEditor": "none",
-  "remote.autoForwardPortsSource": "hybrid"
+  "remote.autoForwardPortsSource": "hybrid",
+  "git.openRepositoryInParentFolders": "never"
 }

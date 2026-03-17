@@ -1,6 +1,7 @@
 # Brewfile - dotfiles パッケージ管理
 # brew bundle でまとめてインストール: brew bundle
 
+brew "gh"
 brew "git"
 brew "starship"
 
