@@ -84,6 +84,14 @@ brew bundle dump --force
 - `ssh/config` には秘密鍵のパスを記載するが、鍵ファイル自体は別途管理する
 - macOS 設定は `bash macos/defaults.sh` で単独実行も可能
 
+## 日常運用フロー
+
+| シーン | やること |
+|--------|----------|
+| 新規Macセットアップ | `bash setup.sh` |
+| パッケージ追加 | Brewfile編集 → `brew bundle` → push |
+| dotfiles設定変更 | ファイル編集（シンボリックリンクなので即反映）→ push |
+
 ## VSCode 拡張機能の更新
 
 ```bash
