@@ -3,6 +3,7 @@
 
 brew "gh"
 brew "git"
+brew "python3"
 brew "starship"
 
 cask "claude-code"
