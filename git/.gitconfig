@@ -1,3 +1,5 @@
 [user]
 	name = tiwakawa
 	email = 1021437+tiwakawa@users.noreply.github.com
+[alias]
+	st = status
