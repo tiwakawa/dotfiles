@@ -68,12 +68,13 @@ mkdir -p "$HOME/.config"
 # シンボリックリンクを強制作成（既存ファイル/リンクがあっても上書き）
 ln -sf "$DOTFILES_DIR/zsh/.zshrc"            "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
-ln -sf "$DOTFILES_DIR/git/.gitconfig"         "$HOME/.gitconfig"
+# .gitconfig はコピー（シンボリックリンクにするとVSCodeのcredential helper書き込みがMac側dotfilesを汚染するため）
+cp "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
 echo "dotfiles を適用しました:"
-echo "  ~/.zshrc            -> $DOTFILES_DIR/zsh/.zshrc"
-echo "  ~/.config/starship.toml -> $DOTFILES_DIR/starship/starship.toml"
-echo "  ~/.gitconfig        -> $DOTFILES_DIR/git/.gitconfig"
+echo "  ~/.zshrc            -> $DOTFILES_DIR/zsh/.zshrc (symlink)"
+echo "  ~/.config/starship.toml -> $DOTFILES_DIR/starship/starship.toml (symlink)"
+echo "  ~/.gitconfig        <- $DOTFILES_DIR/git/.gitconfig (copy)"
 
 # デフォルトシェルを zsh に変更
 ZSH_PATH="$(which zsh)"
