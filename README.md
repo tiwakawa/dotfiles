@@ -20,6 +20,8 @@ dotfiles/
 │   ├── extensions.txt    # VSCode 拡張機能リスト
 │   ├── keybindings.json  # VSCode キーバインド
 │   └── settings.json     # VSCode 設定
+├── claude/
+│   └── CLAUDE.md         # Claude Code グローバル設定
 └── zsh/
     └── .zshrc            # Zsh 設定
 ```
