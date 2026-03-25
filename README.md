@@ -58,11 +58,11 @@ setup.sh が行うこと：
 |---|---|---|
 | brew | `gh` | GitHub CLI |
 | brew | `git` | バージョン管理 |
-| brew | `ollama` | ローカル LLM 実行環境 |
 | brew | `starship` | シェルプロンプト |
 | cask | `claude-code` | Claude Code CLI |
 | cask | `docker-desktop` | Docker Desktop |
 | cask | `iterm2` | ターミナル |
+| cask | `tableplus` | データベース GUI クライアント |
 | cask | `visual-studio-code` | エディタ |
 | vscode | `ms-vscode-remote.remote-containers` | Dev Containers |
 | vscode | `vscodevim.vim` | Vim キーバインド |

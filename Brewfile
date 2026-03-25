@@ -3,12 +3,12 @@
 
 brew "gh"
 brew "git"
-brew "ollama"
 brew "starship"
 
 cask "claude-code"
 cask "docker-desktop"
 cask "iterm2"
+cask "tableplus"
 cask "visual-studio-code"
 
 vscode "ms-vscode-remote.remote-containers"
