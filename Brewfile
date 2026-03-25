@@ -7,6 +7,7 @@ brew "starship"
 
 cask "claude-code"
 cask "docker-desktop"
+cask "google-drive"
 cask "iterm2"
 cask "tableplus"
 cask "visual-studio-code"

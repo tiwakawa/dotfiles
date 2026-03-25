@@ -64,6 +64,7 @@ setup.sh が行うこと：
 | brew | `starship` | シェルプロンプト |
 | cask | `claude-code` | Claude Code CLI |
 | cask | `docker-desktop` | Docker Desktop |
+| cask | `google-drive` | Google Drive |
 | cask | `iterm2` | ターミナル |
 | cask | `tableplus` | データベース GUI クライアント |
 | cask | `visual-studio-code` | エディタ |
