@@ -61,6 +61,7 @@ setup.sh が行うこと：
 |---|---|---|
 | brew | `gh` | GitHub CLI |
 | brew | `git` | バージョン管理 |
+| brew | `python3` | Python 3 |
 | brew | `starship` | シェルプロンプト |
 | cask | `claude-code` | Claude Code CLI |
 | cask | `docker-desktop` | Docker Desktop |
