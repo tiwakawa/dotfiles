@@ -49,6 +49,7 @@ setup.sh が行うこと：
 | `ssh/config` | `~/.ssh/config` |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
 | `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
+| `claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
 
 ## Brewfile
 
