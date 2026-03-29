@@ -4,6 +4,7 @@
 brew "gh"
 brew "git"
 brew "python3"
+brew "mise"
 brew "starship"
 
 cask "claude-code"

@@ -16,19 +16,15 @@
 
 ## 環境構成
 - パッケージ管理はBrewfileで一元管理（`brew install` は直接使わない）
-- 全プロジェクトをDev Containerで管理する
-- Dev ContainerにはdotfilesをBind Mountして適用する（zsh・starship等）
-- Macをクリーンに保つ（anyenv・rbenv等はMacに直接入れない）
-- Claude CodeはMac側のターミナル（iTerm2）から実行する（Dev Containerの中では使わない）
+- Ruby・Node.js等の言語ランタイムはMacにrbenv・nvm等でインストールしてバージョン管理する
+- プロジェクト固有のDB・インフラ（PostgreSQL・Redis等）はDocker Composeでコンテナ化する
+- Claude CodeはMac側のターミナル（iTerm2）から実行する
 
-## Dev Container vs ローカルの判断
-- 基本はDev Container
-- 以下の場合はローカルで前進する
-  - Docker禁止等の制約がある場合
-  - 半日〜1日でコンテナ起動できない場合
+## Docker Composeの方針
+- DBやインフラのみコンテナ化し、アプリ本体はMac上で直接実行する
+- 各プロジェクトに `docker-compose.yml` を置いてDB等を管理する
+- プロジェクトごとに `.ruby-version` / `.node-version` 等でバージョンを明示する
 
-## Dev Containerの設計方針
-- zsh・starship・デフォルトシェル変更はDockerfileで行う
-- コンテナ起動直後からdotfilesが反映されるよう `/etc/zsh/zshrc` でBind Mount経由でsource
-- `.gitconfig` はシンボリックリンクではなくコピー（VSCodeのcredential helper汚染を防ぐため）
-- `postCreateCommand` には依存インストール（bundle install・npm install等）のみ記載する
+## Dev Containerについて
+- チーム参画や明確な必要性がある場合に採用する
+- muscle-trackerで実装済みのため、必要時は知見を流用できる
