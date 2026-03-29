@@ -110,6 +110,7 @@ link "$DOTFILES_DIR/git/.gitconfig"           "$HOME/.gitconfig"
 link "$DOTFILES_DIR/starship/starship.toml"   "$HOME/.config/starship.toml"
 link "$DOTFILES_DIR/ssh/config"               "$HOME/.ssh/config"
 link "$DOTFILES_DIR/claude/CLAUDE.md"         "$HOME/.claude/CLAUDE.md"
+link "$DOTFILES_DIR/mise/config.toml"         "$HOME/.config/mise/config.toml"
 
 # SSH config のパーミッションを設定（セキュリティ要件）
 chmod 700 "$HOME/.ssh"
@@ -123,6 +124,19 @@ if [[ "$OS" == "Darwin" ]]; then
 else
   link "$DOTFILES_DIR/vscode/settings.json"     "$HOME/.config/Code/User/settings.json"
   link "$DOTFILES_DIR/vscode/keybindings.json"  "$HOME/.config/Code/User/keybindings.json"
+fi
+
+# ------------------------------
+# mise ツールのインストール
+# ------------------------------
+echo ""
+info "mise でツールをインストールします..."
+
+if command -v mise &>/dev/null; then
+  mise install
+  info "mise install 完了"
+else
+  warn "mise が見つかりません。Brewfile のインストール後に mise install を実行してください。"
 fi
 
 # ------------------------------
