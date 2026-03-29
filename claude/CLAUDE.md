@@ -16,14 +16,15 @@
 
 ## 環境構成
 - パッケージ管理はBrewfileで一元管理（`brew install` は直接使わない）
-- Ruby・Node.js等の言語ランタイムはMacにrbenv・nvm等でインストールしてバージョン管理する
-- プロジェクト固有のDB・インフラ（PostgreSQL・Redis等）はDocker Composeでコンテナ化する
+- アプリ・DB・インフラはすべてDocker Composeでコンテナ化し、環境をプロジェクト内に閉じ込める
+- 言語ランタイム（Ruby・Node.js等）はMacに直接インストールしない（Docker内で管理）
 - Claude CodeはMac側のターミナル（iTerm2）から実行する
+- ローカルスクリプト等で特定バージョンの言語が必要になった場合は、その時点でmiseを再導入する
 
 ## Docker Composeの方針
-- DBやインフラのみコンテナ化し、アプリ本体はMac上で直接実行する
-- 各プロジェクトに `docker-compose.yml` を置いてDB等を管理する
-- プロジェクトごとに `.ruby-version` / `.node-version` 等でバージョンを明示する
+- アプリ本体（Rails等）とDB・インフラをまとめてDocker Composeで管理する
+- Dev Containerは使わない（docker compose up で起動するシンプルな構成）
+- 各プロジェクトに `docker-compose.yml` を置いて管理する
 
 ## Dev Containerについて
 - チーム参画や明確な必要性がある場合に採用する

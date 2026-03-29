@@ -1,7 +1,0 @@
-[settings]
-
-[settings.ruby]
-compile = false
-
-[tools]
-ruby = "3.3.10"
