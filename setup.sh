@@ -106,6 +106,7 @@ echo ""
 info "シンボリックリンクを作成します..."
 
 link "$DOTFILES_DIR/zsh/.zshrc"              "$HOME/.zshrc"
+link "$DOTFILES_DIR/zsh/.zshenv"             "$HOME/.zshenv"
 link "$DOTFILES_DIR/git/.gitconfig"           "$HOME/.gitconfig"
 link "$DOTFILES_DIR/starship/starship.toml"   "$HOME/.config/starship.toml"
 link "$DOTFILES_DIR/ssh/config"               "$HOME/.ssh/config"
