@@ -3,6 +3,7 @@
 
 brew "gh"
 brew "git"
+brew "git-filter-repo"
 brew "python3"
 brew "starship"
 
