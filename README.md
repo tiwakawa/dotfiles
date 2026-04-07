@@ -61,11 +61,12 @@ setup.sh が行うこと：
 |---|---|---|
 | brew | `gh` | GitHub CLI |
 | brew | `git` | バージョン管理 |
+| brew | `git-filter-repo` | Git 履歴書き換えツール |
 | brew | `python3` | Python 3 |
 | brew | `starship` | シェルプロンプト |
 | cask | `claude-code` | Claude Code CLI |
+| cask | `codex` | Codex CLI |
 | cask | `docker-desktop` | Docker Desktop |
-| cask | `google-drive` | Google Drive |
 | cask | `iterm2` | ターミナル |
 | cask | `tableplus` | データベース GUI クライアント |
 | cask | `visual-studio-code` | エディタ |

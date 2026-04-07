@@ -8,6 +8,7 @@ brew "python3"
 brew "starship"
 
 cask "claude-code"
+cask "codex"
 cask "docker-desktop"
 cask "iterm2"
 cask "tableplus"
