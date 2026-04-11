@@ -33,16 +33,19 @@
 ## 秘密情報の扱い
 
 - 秘密情報を含む可能性があるファイルは、読まない・開かない・表示しない・要約しない・編集しないこと。
-- 以下のようなファイルは機密扱いとし、アクセスしないこと。
-  - `.env`
-  - `.env.*`
-  - `config/credentials*`
-  - `secrets.*`
-  - `*.pem`
-  - `*.key`
-  - `*.p12`
-  - クラウド認証JSON
-  - APIキー、アクセストークン、パスワード、秘密鍵、証明書を含むファイル
+- 以下のようなファイルは機密扱いとし、アクセスしないこと（`~/.claude/settings.json` の `permissions.deny` で二重に保護している）。
+  - **環境変数ファイル**: `.env`, `.env.*`, `.envrc`
+  - **Rails credentials**: `config/credentials*`, `config/master.key`
+  - **汎用シークレット**: `secrets/**`, `secrets.*`, `secret.*`, `*.secret`, `credentials.*`
+  - **証明書・鍵ファイル**: `*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `*.keystore`
+  - **SSH鍵**: `id_rsa`, `id_ed25519`, `id_ecdsa`, `id_dsa`（およびそれらの `.*` バリアント）, `~/.ssh/**`
+  - **クラウド認証**: `~/.aws/**`, `~/.azure/**`, `~/.config/gcloud/**`, `~/.config/google/**`
+  - **Kubernetes**: `~/.kube/**`
+  - **GnuPG**: `~/.gnupg/**`
+  - **Docker認証**: `~/.docker/config.json`
+  - **パッケージマネージャのトークン**: `.npmrc`, `.pypirc`, `.netrc`, `.pgpass`
+  - **クラウドサービスJSON**: `firebase-adminsdk*.json`, `service-account*.json`, `gcp-key*.json`
+  - 上記に該当しなくても、APIキー・アクセストークン・パスワード・秘密鍵・証明書を含むファイル
 - 実装上必要な場合でも、秘密の値そのものは参照せず、`OPENAI_API_KEY` のような環境変数名だけを前提に進めること。
 - 秘密情報の値をチャットに貼るよう要求しないこと。
 - 秘密情報を含むファイルの参照が必要に見える場合は、読まずに停止し、安全な代替手段を提案すること。
