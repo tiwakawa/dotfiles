@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.envrc)",
+      "Read(**/config/credentials*)",
+      "Read(**/config/master.key)",
+      "Read(**/secrets/**)",
+      "Read(**/secrets.*)",
+      "Read(**/secret.*)",
+      "Read(**/*.secret)",
+      "Read(**/credentials.*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/*.jks)",
+      "Read(**/*.keystore)",
+      "Read(**/id_rsa)",
+      "Read(**/id_rsa.*)",
+      "Read(**/id_ed25519)",
+      "Read(**/id_ed25519.*)",
+      "Read(**/id_ecdsa)",
+      "Read(**/id_ecdsa.*)",
+      "Read(**/id_dsa)",
+      "Read(**/id_dsa.*)",
+      "Read(**/.npmrc)",
+      "Read(**/.pypirc)",
+      "Read(**/.netrc)",
+      "Read(**/.pgpass)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.azure/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.config/gcloud/**)",
+      "Read(~/.config/google/**)",
+      "Read(~/.docker/config.json)",
+      "Read(**/firebase-adminsdk*.json)",
+      "Read(**/service-account*.json)",
+      "Read(**/gcp-key*.json)"
+    ]
+  },
+  "effortLevel": "high"
+}
