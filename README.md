@@ -16,6 +16,8 @@ dotfiles/
 │   └── config            # SSH 設定（秘密鍵は含まない）
 ├── starship/
 │   └── starship.toml     # Starship プロンプト設定
+├── vim/
+│   └── .vimrc            # Vim 設定（ターミナルvim用）
 ├── vscode/
 │   ├── extensions.txt    # VSCode 拡張機能リスト
 │   ├── keybindings.json  # VSCode キーバインド
@@ -49,6 +51,7 @@ setup.sh が行うこと：
 | `git/.gitconfig` | `~/.gitconfig` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
 | `ssh/config` | `~/.ssh/config` |
+| `vim/.vimrc` | `~/.vimrc` |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
 | `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
 | `claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
