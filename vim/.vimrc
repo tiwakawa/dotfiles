@@ -4,6 +4,7 @@
 " macOS system vim sets skip_defaults_vim=1, so load defaults.vim explicitly
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
+set mouse=             " マウスキャプチャを無効化（iTerm2でのコピーを妨げるため）
 
 " --------------------------------
 " Syntax / Filetype
