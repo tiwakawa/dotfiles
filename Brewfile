@@ -11,6 +11,7 @@ cask "claude-code"
 cask "codex"
 cask "docker-desktop"
 cask "iterm2"
+cask "slack"
 cask "tableplus"
 cask "visual-studio-code"
 
