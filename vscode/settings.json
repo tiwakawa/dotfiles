@@ -48,5 +48,6 @@
 
   "workbench.startupEditor": "none",
   "remote.autoForwardPortsSource": "hybrid",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "claudeCode.preferredLocation": "panel"
 }
