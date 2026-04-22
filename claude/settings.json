@@ -41,8 +41,13 @@
       "Read(~/.docker/config.json)",
       "Read(**/firebase-adminsdk*.json)",
       "Read(**/service-account*.json)",
-      "Read(**/gcp-key*.json)"
+      "Read(**/gcp-key*.json)",
+      "Bash(*credentials*)",
+      "Bash(*master.key*)",
+      "Bash(*secret_key_base*)",
+      "Bash(*otp_secret*)",
+      "Bash(*encryption_key*)"
     ]
   },
-  "effortLevel": "high"
+  "effortLevel": "max"
 }
