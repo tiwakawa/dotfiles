@@ -1,3 +1,7 @@
+# 環境変数
+.env
+.env.*
+
 # Claude Code
 .claude/
 
