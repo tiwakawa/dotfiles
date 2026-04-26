@@ -50,6 +50,6 @@
       "Bash(*security *)"
     ]
   },
-  "effortLevel": "max",
+  "effortLevel": "high",
   "skipAutoPermissionPrompt": true
 }
