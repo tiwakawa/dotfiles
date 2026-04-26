@@ -46,8 +46,10 @@
       "Bash(*master.key*)",
       "Bash(*secret_key_base*)",
       "Bash(*otp_secret*)",
-      "Bash(*encryption_key*)"
+      "Bash(*encryption_key*)",
+      "Bash(*security *)"
     ]
   },
-  "effortLevel": "max"
+  "effortLevel": "max",
+  "skipAutoPermissionPrompt": true
 }
